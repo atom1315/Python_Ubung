@@ -85,7 +85,7 @@ plt.show()
 
 import pandas as pd
 
-# Daten Ländern und Zigarettenpreisen
+# Daten Ländern und Zigarettenpreisen für Tabelle
 data = {
     "Land": [
         "Albanien", "Ägypten", "Algerien", "Argentinien", "Armenien", "Australien", "Azerbaidschan", "Bangladesch", 
@@ -113,7 +113,7 @@ data = {
 # Bildung DataFrame
 df = pd.DataFrame(data)
 
-# Print Tabellen
+# Print Tabelle
 print(df.to_string(index=False))
 
 
@@ -122,27 +122,27 @@ print(df.to_string(index=False))
 # Sortierte die Daten in aufsteigender Reihenfolge nach Zigarettenpreisen
 df_sorted = df.sort_values(by="Preis für Packung (EUR)")
 
-# Print Tabelle mit Preisen von höhste Preis bis billigste)
+# Print Tabelle 
 print(df_sorted.to_string(index=False))
 
 
 
-# Сортировка данных по возрастанию цены на сигареты
+# Sortirung daten von teuere bis billigste Preis Diagramm 
 df_sorted = df.sort_values(by="Preis für Packung (EUR)")
 
-# Построение столбчатой диаграммы с увеличенными размерами
-plt.figure(figsize=(10, 16))  # Увеличенный размер графика
+# Diogramm schrift Achse X, Y beschreibung, farbe
+plt.figure(figsize=(10, 16))  
 plt.barh(df_sorted["Land"], df_sorted["Preis für Packung (EUR)"], color='skyblue')
 
-# Добавление заголовка и меток осей
+# Titel hinzufügen für Achse X, Y
 plt.title("Preis Zigaretten (für 20 St., in EUR)", fontsize=16)
 plt.xlabel("Preis (EUR)", fontsize=12)
 plt.ylabel("Land", fontsize=12)
 
-# Увеличение шрифта меток осей
-plt.yticks(fontsize=10)  # Увеличение шрифта для стран
+# Schrift grosse fur Lände
+plt.yticks(fontsize=10) 
 
-# Отображение графика
+# Print Diagramm 
 plt.tight_layout()
 plt.show()
 
